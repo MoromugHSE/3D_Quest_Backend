@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="./require.js"></script>
+
+<script>
+
+function check() {
+  var check_login = require("./check_login.js");
+
+  var username = document.getElementById("username").text;
+  var password = document.getElementById("password").text;
+  if (check_login.check_password(username, password)) window.location.replace("mainpage.html");
+  else window.location.reload();
+}
+</script>
+
+<p>Введите данные для входа:</p>
+
+<form id="login_form" action="/main_page.js">
+  Имя пользователя: <input type="text" id="username"><br>
+  Пароль: <input type="text" id="password"><br><br>
+  <input type="button" onclick="check()" value="Submit">
+</form>
+
+</body>
+</html>
